@@ -1,49 +1,65 @@
 .. -*- coding: utf-8 -*-
 
-==========
-The Buffer
-==========
+===========
+The Buffers
+===========
 
-Press ``CTRL-g`` here to see where you are. You cursor way on
-``place_05.html`` when you pressed ``gf`` but you actually jumped to
-``place_05.rst``, and the reason behind it is your configuration for
-``includeexpr``.
+Press ``CTRL-g`` to see where you are. Let me remind your, your cursor
+way on ``place_05.html`` when you pressed ``gf`` but you actually jumped
+to ``place_05.rst``, and the reason behind it is your configuration for
+``includeexpr``. This is an amazing feature!
 
-It's time to cover Vim's amazing buffers. When it comes to multi-file
-editing this is where Vim starts to shine. Understanding how to use the
-buffers significantly improves your efficiency so I highly recommend
-reading ``:help buffers`` when you have the time. Buffers allow us to
-open multiple files in different windows and tabs for editing.
+Now it's time to cover Vim's amazing buffers. When it comes to
+multi-file editing this is where Vim starts to shine. Understanding how
+to use the buffers significantly improves your efficiency so I highly
+recommend reading ``:help buffers`` when you have the time. Buffers
+allow us to open multiple files in different windows and tabs for
+editing.
 
-Think of buffers as a register which (ethically) tracks your movement in
-Vim. Whenever you open a new file this is registered in the buffers.
-Type ``:buffers`` (or shorter ``:ls``) and it will give you a list of
-files you have edited during your Vim session. If you have followed this
-tutorial, your output of your ``:ls`` should look something like this::
+Think of the buffers as Vim register which (ethically) tracks your
+movement between different files. Whenever you open a new file this is
+registered in the buffers. Type ``:buffers`` (or shorter ``:ls``) and
+it will give you a list of files you have edited during your Vim
+session. If you have followed this tutorial, without closing your Vim in
+the mean time, the output of your ``:ls`` should look something like
+this::
 
-  :ls                                                                                                                                                           
+  :ls
     1      "place_01.rst"                 line 55
     2      "place_02.rst"                 line 53
     4      "foo/place_03.rst"             line 47
     6 #    "place_04.rst"                 line 55
     8 %a   "place_05.rst"                 line 8
 
-Each file has a unique number assigned to it and line at which the
-cursor was before the jump. Currently edited file is marked with ``%``
-and ``#`` is the file from which you came. If you look at the list, it
-seems like there are files missing because some of the numbers are
-missing. In the same time we see that all the files we visited are
-present in the list.  The reason for this is that during this tutorial
-we have opened files and than used ``CTRL-o`` to jump back and than
+Each file has a unique number assigned to it and line number at which
+the cursor was before the jump. Currently edited file is marked with
+``%`` and ``#`` is the file from which you came. If you look at the
+list, it seems like there are files missing because some of the numbers
+are missing. In the same time we see that all the files we edited are
+present in the list. The reason for this is that during this tutorial we
+have opened files and than used ``CTRL-o`` to jump back and than
 reopened the same files again.
 
-Command ``:b`` allows us to move between the files in the list produced
-by ``:ls`` command. In order to move to ``place_02.rst`` file you can
-either specifying the unique number of that file ``:b2`` or  unique
-pattern ``:b_02`` that corresponds to the file name (place**_02**.rst).
+To move between the files in the buffers use command ``:b``. In order to
+move to ``place_02.rst`` file you can either specifying the unique
+number of that file ``:b2`` or unique pattern ``:b_02`` that corresponds
+to the file name (place\ **_02**\ .rst). This is very fast movement if
+your files have unique names.
 
-Remember when you typed ``:echo @%`` after a jump to see in which file
-you were? You actually used buffers without knowing it. You can also
-use ``:b#`` which means go the files where you were before entering this
-file. In case you made a lot of jumps inside a file you are editing
-typing ``:b#`` can be much faster to move to a previous file.
+Remember that you typed ``:echo @%`` after a jump to see in which file
+you were? You actually used buffers without knowing it. You can also use
+``:b#`` which means go to the files where you were before entering the
+current file file. In case you made a lot of jumps inside a file you are
+editing typing ``:b#`` can be much faster to move to a previous file
+than ``CTRL-o``. Otherwise, you can use ``:bn`` (next) and ``:bp``
+(previous) to move up and down the buffers list.
+
+It is important to learn how to move to a non-existing file, this
+corresponds to file creating. A simple way to do it is with ``:e
+filename`` which opens a new files for editing in the current window. If
+there are any changes in the file Vim will ask you to save before moving
+to the new file. A better way of making a new files is using ``:new
+filename`` or ``CTRL-w n`` to create a ``No name`` file that will get
+it's name when you save the file for the first time using ``:w
+filename``. The two latter commands split the window and creates a new
+file in the same time.

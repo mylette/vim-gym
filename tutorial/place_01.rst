@@ -5,51 +5,55 @@ Make the Jump
 
 .. Attention::
 
-  To follow the tutorial start by openning this file in Vim/Neovim from
-  the current directory. This makes sure that ``pwd`` in your Vim is set
-  correctly.
+  To follow the tutorial open this file in Vim/Neovim from the dierctory
+  where the files is located. This ensures that the ``pwd`` in your Vim
+  is set approprietly for multi-file manipulation.
 
-Before starting, check your working directory in Vim by typing ``:pwd``,
-in the Normal mode, and remember where you are. If you have entered from
-the current working directory the results should end with "/tutorial".
+Before you jump anywhere, type ``:pwd`` (without the quotes, sorry for
+quotes but they are a part of the reStructuredText markup language)
+while your are in the Normal mode to see what is your working directory.
+The directory in which you were when you opened Vim is your current
+working directory. Optionally, you could change it using ``:cd``
+command. It's considered a good practice to have your working directory
+at the top-most level of the project on which you are working. In this
+case ``:pwd`` should return a path which ends with ``/tutorial`` because
+all of the files we will be work with are located in this directory or
+it's subdirectories.
 
-Usually our files are scattered across different directories in our
-projects but we won't let that slow us down, right? This means that we
-have to master jumping between files in Vim [1]_ to increase our
-productivity.
+Typically, our files are scattered across subdirectories of our projects
+but this shouldn't slow us down when working with Vim, right? In fact,
+it means that we should master jumping between files [1]_ in order to
+increase our productivity.
 
-Let me introduce you, command ``:find`` is one of your best friends when
-it comes to jumping between files. While in the Normal mode, type the
-command together with the "destination file" to which you would like to
-go to
-
-.. code:: vim
-
-  :find destination_file
-
-To make ``:find`` search fuzzy just include ``set path=**`` and ``set
-wildmenu`` in your ``~/.vimrc``. In Neovim this should be the default
-but in case it isn't just include it in your ``~/.config/nvim/init.vim``
-[2]_. To use the fuzzy search press ``TAB`` to autocomplete your
-"destination file" name if it exists in your directory. Before you ask,
-yes it works for nested directories.
-
-Your task is to use the newly gained power of ``:find`` and jump to a
-files called ``place_02.rst`` by typing
+Let me introduce you to ``:find``, this command is one of your best
+friends when it comes to opening and jumping into files. It works like
+this, while you are in the Normal mode, you would type the command
+together with the *target filename* to which you would like to go to, as
 
 .. code:: vim
 
-  :find place_02.rst
+  :find target_filename
 
-and I'll see you there.
+Most Vim users get surprised when they learn that ``:find`` actually
+support fuzzy search without plugins. If you are using standard Vim all
+you have to do is include ``set path=**`` and ``set wildmenu`` in your
+``~/.vimrc``. For Neovim users this functionality should be default,
+however if it is not just include the same configuration to your
+``~/.config/nvim/init.vim`` [2]_. To use the fuzzy search engine type
+``:find`` and start entering the name of your *target filename* then use
+``TAB`` to autocomplete the file name. Let's see ``:find`` in action.
+
+Use your ``:find`` and jump to a files called ``place_02.rst``. To do
+this simply type ``:find place_02.rst`` (without the quotes, once again
+sorry for that) and I'll see you there.
 
 .. [1] If this reminds you of the scene from "The Matrix" movie where
        Neo (Keanu Reeves) has to jump rooftops after Morpheus (Laurence
-       Fishburne) you and me would probably be best friends.
+       Fishburne) we would probably be best friends.
 
-.. [2] This configuration does not provide complete functionality of
-       plug-ins such as CommandT_ and ctrlp_ but it works nicely for most
-       of the thngs one needs.
+.. [2] This configuration does not have the complete functionality of
+       plugins like CommandT_ and ctrlp_, but it provides the
+       fundamentals which is usually sufficiend.
 
 .. _CommandT: https://github.com/wincent/Command-T
 .. _ctrlp: https://github.com/ctrlpvim/ctrlp.vim

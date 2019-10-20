@@ -5,47 +5,48 @@ Find a Place to Jump from
 =========================
 
 Great work! You have successfully jumped into a file located in a
-subdirectory.
+subdirectory using abbreviated pattern.
 
-Now it's time to learn about *go to file* command or ``gf``. This is yet
+Now it's time to learn about *goto file* command or ``gf``. This is yet
 another useful command that works in a similar way as ``:find``, but
-without so much typing. Basically, instead of typing the pattern to
+without all that typing. Basically, instead of typing the pattern to
 ``:find`` all you have to do is move the cursor over text which you want
-to use as pattern and while in the Normal mode press ``gf``, it's that
-simple.
+to use as the pattern and while in the Normal mode press ``gf``, it's
+that simple.
 
 Try it out, place your cursor over the marked word --> place_04 <-- and
-jump away by pressing ``gf``. But don't run away, come back using
-``CTRL-o`` I still want to show you something before we go further.
+jump away by pressing ``gf``. But remember to come back using ``CTRL-o``
+I still want to show you few things before we go further.
 
-Did you notice that so far we have worked with only one window in Vim?
-This is not the Vim style of doing things. Therefore, if you're used to
-working with multiple windows you could chose to split the window when
-making a jump either by using a version of ``:find`` called *splitfind*
-``sfind`` (or ``sf`` for short). Before you open any windows here's a
-tip, use ``CTRL-w q`` to close the window which will return you to the
-previous one. Feel free to try either
-
-.. code:: vim
-
-  sf place_04.rst
-
-which jumps to the file and splits the window horizontally (close the
-window using ``CRTL-w q`` and come back) or
+Did you notice that until now we worked with only one window in Vim?
+This is not the Vim style of working with multiple files. Therefore, if
+you're used to working with multiple windows you can split the window
+when jumping to a file either by using a version of ``:find`` called
+*splitfind* ``:sfind`` (or ``:sf`` for short). Before you open any
+windows which you maybe don't know how to close, here's a tip, use
+``CTRL-w q`` to close the window this will return you to the previous
+one. Feel free to try either
 
 .. code:: vim
 
-  vert sf place_04.rst
+  :sf place_04.rst
+
+to jump to the file while splitting the window horizontally (close the
+window by pressing ``CRTL-w q`` and come back) or
+
+.. code:: vim
+
+  :vert sf place_04.rst
 
 vertically. The same result can be accomplished with ``gf``, place the
-cursor over the word that you would like to use as a pattern and press
-``CTRL-w SHIFT-f``. I don't want to go down the rabbit hole and start
-talking about window managing, this tutorial is focused on movement
-between the files.
+cursor over the word that you would like to use as the pattern and press
+``CTRL-w F`` (capital F). I don't want to go down the rabbit hole and
+start talking about window managing, this tutorial is focused on the
+movement between multiple files.
 
-I bet you love ``gf`` by now, it don't require much typing, so here is a
-jump point for you: ``place_04``. Notice that the jump point does not
-have the file path and extension, this is because ``gf`` will expand the
-pattern under the cursor together with ``set path+=**`` and ``set
-suffixesadd+=.rst``). Place the cursor on the jump point and use ``gf``
-to jump to the next topic.
+I bet you love ``gf`` by now, since it don't require much typing, so
+here is a jump point for you: ``place_04``. Notice that the jump point
+does not have the file path and extension, this is because ``gf`` will
+expand the pattern under the cursor together with ``set path+=**`` and
+``set suffixesadd+=.rst`` configuration into ``place_04.rst``. Place the
+cursor on ``place_04`` and use ``gf`` to jump to the next topic.
