@@ -18,24 +18,24 @@ workflow more enjoyable.
 
 .. _README: ../README.html
 
-How the Tutorial Works
-======================
+Instructions for the Tutorial
+=============================
 
 To start the tutorial do the following:
 
 * Copy the configuration from README_ to your ``~/.vimrc`` or
   ``~/.config/nvim/init.vim``
 
-* Open the `tutorial_0.rst <tutorial_0.rst>`_ with Vim
+* Open the `place_01.rst <place_01.rst>`_ with Vim
 
   .. code:: bash
 
-    $ vim tutorial_0.rst
+    $ vim place_01.rst
 
   or Neovim
 
   .. code:: bash
 
-    $ nvim tutorial_0.rst
+    $ nvim place_01.rst
 
 * Follow the instructions from there on in your Vim/Neovim

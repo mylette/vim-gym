@@ -1,0 +1,55 @@
+.. -*- coding: utf-8 -*-
+
+=====================
+Fixing ``gf`` for RST
+=====================
+
+If you know reStructuredText (RST), you might have noticed that in the
+previous example we used plain text as a jump point for our ``gf``
+command (i.e., ``place_04``). Otherwise, if you don't know
+reStructuredText, last sentence probably confused you and you are
+wondering "What's wrong with using plain text as a jump point?".
+
+The thing is, when writing RST you will eventually want to convert all
+.rst files to .html files. Like other markup languages, RST supports
+hyperlink syntax making it possible to creates jump points for HTML.
+Unfortunately, the hyperlink syntax in RST is not automatically a jump
+point points for Vim to other .rst files.
+
+Let's assume that the names of HTML files are the same as .rst files
+only with extension .html instead of .rst (i.e., file named
+``page_03.rst`` becomes ``page_03.html``). In RST, a hyperlink to
+``foo\page_03.rst`` with the text "Jill" would be either one of the
+following
+
+.. code::
+
+  go to `Jill <foo/place_03.html>`_
+
+.. code::
+
+  go to Jill_
+
+  .. _Jill: foo/place_03.html
+
+place_03.rst_
+
+Without configuration it's not possible to use ``gf`` on hyperlinks
+``<foo/place_03.html>`` and ``foo/place_03.html`` and expect Vim to jump
+to corresponding .rst source file ``foo/place_03.rst``. If we tried Vim
+would either complain giving an error message ``Can't find file
+"foo/place_03.html" in path`` or it would would jump into
+``foo/place_03.html`` if this file existed, either, this is not what we
+want.
+
+Vim has a nice toolbox for dealing with these kinds of problems, which
+is configuring ``includeexpr``. Therefore, make sure to configure
+``includeexpr`` according to README_ in order to continue the tutorial
+because now you are going to jump to a .rst file using RST hyperlink
+syntax. This is a really sweet feature because it allows us write in
+standard RST syntax and jump to the corresponding files in our project's
+directory. So place your cursor inside the angle brackets in the
+`following hyperlink <place_05.html>`_ and press ``gf`` to go to
+``place_05.rst``.
+
+.. _README: ../README.html

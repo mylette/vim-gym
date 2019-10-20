@@ -9,6 +9,8 @@ The First Jump
   the current directory. This makes sure that ``pwd`` in your Vim is set
   correctly.
 
+--------
+
 Before starting, check your working directory in Vim by typing ``:pwd``,
 in the Normal mode, and remember where you are. If you have entered from
 the current working directory the results should end with "/tutorial".
@@ -48,7 +50,8 @@ and I'll see you there.
        Fishburne) you and me would probably be best friends.
 
 .. [2] This configuration does not provide complete functionality of
-       plug-ins such as CommandT_ and ctrlp_ but does the job.
+       plug-ins such as CommandT_ and ctrlp_ but it works nicely for most
+       of the thngs one needs.
 
 .. _CommandT: https://github.com/wincent/Command-T
 .. _ctrlp: https://github.com/ctrlpvim/ctrlp.vim

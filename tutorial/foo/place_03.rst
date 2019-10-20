@@ -14,7 +14,7 @@ without so much typing. Basically, instead of typing the pattern to
 to use as pattern and while in the Normal mode press ``gf``, it's that
 simple.
 
-Try it out, place your cursor over the marked word -> place_04 <- and
+Try it out, place your cursor over the marked word --> place_04 <-- and
 jump away by pressing ``gf``. But don't run away, come back using
 ``CTRL-o`` I still want to show you something before we go further.
 
@@ -28,14 +28,14 @@ previous one. Feel free to try either
 
 .. code:: vim
 
-  sf place_04
+  sf place_04.rst
 
 which jumps to the file and splits the window horizontally (close the
 window using ``CRTL-w q`` and come back) or
 
 .. code:: vim
 
-  vert sf place_04
+  vert sf place_04.rst
 
 vertically. The same result can be accomplished with ``gf``, place the
 cursor over the word that you would like to use as a pattern and press
@@ -43,6 +43,9 @@ cursor over the word that you would like to use as a pattern and press
 talking about window managing, this tutorial is focused on movement
 between the files.
 
-I know you love ``gf`` since you don't need to type much, so here is a
-jump point for you ``place_04.rst``. Place the cursor on the file name
-and use ``gf`` to jump to the next topic.
+I bet you love ``gf`` by now, it don't require much typing, so here is a
+jump point for you: ``place_04``. Notice that the jump point does not
+have the file path and extension, this is because ``gf`` will expand the
+pattern under the cursor together with ``set path+=**`` and ``set
+suffixesadd+=.rst``). Place the cursor on the jump point and use ``gf``
+to jump to the next topic.

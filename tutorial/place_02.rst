@@ -32,7 +32,7 @@ path+=**`` it search recursively for all the files in the current
 working directory. If the "target file" is in a subdirectory, you don't
 need to specify the path to the file, just searching for the name will
 be enough for Vim will find it. Try it with the ``foo/place_03.rst``
-file, instead of typing the full file path search for the file name
+file, instead of typing the full file path search for the file name with
 
 .. code:: vim
 
