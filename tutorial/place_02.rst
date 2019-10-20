@@ -1,8 +1,8 @@
 .. -*- coding: utf-8 -*-
 
-==============
-Back and Forth
-==============
+====================
+Back and Forth We Go
+====================
 
 Congrats, you made the jump Neo!
 
@@ -21,10 +21,12 @@ location from which you jumped into this file. Try it out, press
 As you can imagine, this is really useful when you need to move between
 different files, instead of typing ``:find`` you can use ``CTRL-o`` and
 ``CRTL-i`` to jump back and forth. However, keep in mind, *by default
-Vim doesn't let you jump to another file if there are unsaved changes*.
-Typing ``:jumps`` (or shorter ``:ju``) in the Normal mode returns the
-history of your jumps (see ``:help jumps``) between which you can go
-back and forth.
+Vim doesn't let you jump to another file if there are unsaved changes*
+because this way of jumping is equivalent to closing a file. Later you
+will see a more "Vimistic" way of jumping to the previous file. Typing
+``:jumps`` (or shorter ``:ju``) in the Normal mode returns the history
+of your jumps (see ``:help jumps``) between which you can go back and
+forth.
 
 One thing you should know about the engine that runs ``:find`` is that
 it is easily configurable. When you set your Vim environment with  ``set

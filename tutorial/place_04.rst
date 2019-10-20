@@ -43,13 +43,21 @@ would either complain giving an error message ``Can't find file
 want.
 
 Vim has a nice toolbox for dealing with these kinds of problems, which
-is configuring ``includeexpr``. Therefore, make sure to configure
+is configuring ``includeexpr``. If Vim fails to find the file where you
+want to go, using ``:find`` or ``gf``, it will look in ``includeexpr``
+and follow the rules that are provided there (see ``:help includeexpr``)
+which is usually some substitution. Therefore, make sure to configure
 ``includeexpr`` according to README_ in order to continue the tutorial
 because now you are going to jump to a .rst file using RST hyperlink
-syntax. This is a really sweet feature because it allows us write in
-standard RST syntax and jump to the corresponding files in our project's
-directory. So place your cursor inside the angle brackets in the
-`following hyperlink <place_05.html>`_ and press ``gf`` to go to
-``place_05.rst``.
+syntax. This is a really nice feature because it allows us write in
+standard RST syntax and jump to the corresponding files inside the
+directory of our project. So place your cursor inside the angle brackets
+in the `following hyperlink <place_05.html>`_ and press ``gf``.
+
+.. Note::
+
+  This doesn't work when there is a file called ``place_05.html`` inside
+  your working directory. In that case Vim will find ``place_05.html``
+  file, and therefore it will not invoke ``includeexpr`.
 
 .. _README: ../README.html

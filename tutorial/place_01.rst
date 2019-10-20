@@ -1,15 +1,13 @@
 .. -*- coding: utf-8 -*-
 
-The First Jump
-==============
+Make the Jump
+=============
 
 .. Attention::
 
   To follow the tutorial start by openning this file in Vim/Neovim from
   the current directory. This makes sure that ``pwd`` in your Vim is set
   correctly.
-
---------
 
 Before starting, check your working directory in Vim by typing ``:pwd``,
 in the Normal mode, and remember where you are. If you have entered from
