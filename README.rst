@@ -57,22 +57,22 @@ names before opening them. These two amazing features allow you to use
 any kind of markup language you want to write your notes. Would you like
 to create files? Chose which works better for you ``:new`` or ``:e``.
 
-It's easy to lose track of the opened files but rest assured that the
-Vim buffer keeps a list for you, all you need to do is ask ``:ls``.
-Editing a file from the buffer is as easy as saying ``:b{pattern}``
-where ``pattern`` is the unique part in the file name, which could be
-even a single letter! This gets even simpler if you want to go back to a
-file where you were a second ago, simply use ``CTRL-6``!  If you are
-good at keeping track of the jumps you made don't forget to use
-``CRTL-o`` and ``CRTL-i``, this will bring you home in a blink of an eye
-(but don't overuse this one).
+It's easy to lose track of opened files but rest assured that the Vim
+buffer keeps a list for you, all you need to do is ask ``:ls``.  Editing
+a file from the buffer is as easy as saying ``:b{pattern}`` where
+``pattern`` is a unique part in the file name, which could be even a
+single letter! This gets even simpler if you want to go back to a file
+where you were a second ago, simply use ``CTRL-6``!  If you are good at
+keeping track of the jumps you made don't forget to use ``CRTL-o`` and
+``CRTL-i``, this will bring you home in a blink of an eye (this one is
+easy to overuse, don't be Hulk - don't smash).
 
 Still not impressed? Here is a real case scenario. You are editing your
-notes from the previous days and you have 20+ files opened in your Vim
+notes from the previous month and you have 20+ files opened in your Vim
 session, you suddenly realize that it would be a great idea to add the
 same hyperlink, pointing to a table of content file, at the end of every
 opened files in your buffers. This very simple problem would probably be
-an opening scene to a horror movie in most of editor, but in Vim all you
+an opening scene to a horror movie in most text editors, but in Vim all you
 have to do is make a small macro called ``r``
 
 .. code:: vim
@@ -96,45 +96,104 @@ it...
 
 All of this and yet we are still scratching the surface of Vim's
 capabilities when it comes to editing multiple files and working with
-notes. Using plugins is awesome, I don't want you to get me wrong.
-Certain plugins, however, seem to reinvent some of Vim's irreplaceable
-capabilities and don't seem to scale as well for anything else than what
-they are designed for. Although this might not bad per say, it is probably
-not optimal for many of us at.
+notes. I don't want you to get me wrong, using plugins can be great.
+However, certain plugins seem to reinvent some of Vim's irreplaceable
+capabilities and don't seem to fit as well with other Vim's tools for
+anything else than what they are designed for. Although this might not
+be bad per-say, it is probably not optimal for many of us how would.
 
 Configuration
 -------------
 
 If you are using Vim make sure that you configure your ``~/.vimrc``,
-however if you are Neovim user you should make changes to
-in ``~/.config/nvim/init.vim``.
+however if you are Neovim user you should make changes to in
+``~/config/nvim/init.vim``.
 
-Set the path of your Vim to recursively into the subdirectories with
+1. Set the path of your Vim to recursively into the subdirectories with
 
-.. code:: vim
+  .. code:: vim
 
-  set path+=**
+    set path+=**
 
-and enable autocompletion in the command line by
+2. Enable autocompletion in the command line by
 
-.. code:: vim
+  .. code:: vim
 
-  set wildmenu
+    set wildmenu
 
-It seems like in Neovim these two commands are set by default, but it
-wouldn't hurt to put it in there just in case. This configuration
-enables fuzzy search, however, be aware that it does not have the
-complete functionality of plugins such as CommandT_ and ctrlp_.
+In Neovim these are most likely set as default, you could check by
+typing ``:set path?`` and ``:set wildmenu?``. 1. and 2. enable fuzzy
+search [1]_. 
+
+.. [1] Unfortunatly, this is not so well-known feature among user. It
+       does not have the complete functionality of plugins such as
+       CommandT_ and ctrlp_, but in my opinion it works great.
 
 .. _CommandT: https://github.com/wincent/Command-T
 .. _ctrlp: https://github.com/ctrlpvim/ctrlp.vim
 
-When write notes one works with a lot of files of the same file type (in
-this case .rst [1]_). It is helpful if Vim adds 
+3. Configure ``suffixesadd`` by adding file extension corresponding to
+   the markup language, e.g., ``set suffixesadd+=.rst,.md``, if your
+   going to use both reStructuredText and Markdown for taking notes.
 
-.. [1] I could have went for Markdown but I chose reStrucutredText since
-       it has more features and is, in my honest opinion, more
-       appropriate when it comes to technical documentation (see
-       `StructuredText vs. Markdown`_ article).
+4. The most important configure is ``includeexpr`` (see ``:help
+   includeexpr``). This makes writing notes and jumping smoothly into
+   files possible. If you are using reStructuredText use
+
+  .. code:: vim
+
+    set includeexpr=substitute(substitute(substitute(v:fname,'.html','.rst',''),'^_','',''),'_$','','')
+
+  and for Markdown
+
+  .. code:: vim
+
+    set includeexpr=substitute(v:fname,'.html','.md','')
+
+  In Windows command ``gf`` might not work in Markdown when used on
+  reference links [2]_
+  
+  .. code:: Markdown
+
+    Example with a [hyperlink][foo] to foo.html file.
+
+    [foo]: foo.html
+
+  although with standard hyperlinks ``[hyperlink](foo.html)`` it should
+  work fine.
+
+Examples
+--------
+
+Tutorial
+--------
+
+Why You Should Consider Switching to Electronic Notebooks
+=========================================================
+
+As a PhD student I came to realized that the amount of paper usage in
+academia is quite high. Partly due to nature of work which revolves
+around reading and writing articles and partly due to the result of
+habits that we develop until we reach graduate studies to have
+notebooks. However, I wouldn't say it is only me since I see many
+researchers reducing the amount of paper consumption.
+
+To support unnecessary use of paper, I started making e-notes. Although
+there are web sites which provide such services (such as Evernote or
+Google Keep) I value my privacy too much to give away personal
+information freely. In the same time using plain text files for making
+notes just doesn't cut it since the readability of ``.txt`` files is
+very poor. Therefore, having more readable file formats such as HTML and
+PDF would be favorable.
+
+Even though most of people in academia are used to writing LateX,
+writing ``.tex`` files is an overkill as it is tedious and time
+consuming even for advanced users. This is where flexibility and ease of
+markup languages like reStructuredText and Markdown starts to dominate
+the well formulated structure of LaTeX.
+
+.. [1] I could have went for Markdown but I chose reStrucutredText since it has more features and is, in my honest opinion, more appropriate when it comes to technical documentation (see `StructuredText vs. Markdown`_ article).
+
+.. [2] This is because of ``isfname`` and the list of allowed characters for filenames in Windows.
 
 .. _`StructuredText vs. Markdown`: https://eli.thegreenplace.net/2017/restructuredtext-vs-markdown-for-technical-documentation/
