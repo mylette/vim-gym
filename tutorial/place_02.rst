@@ -58,3 +58,4 @@ Try it for yourself, jump to the next file by typing only
 
 Notice that you can abbreviated ``:find`` with ``:fin``, this is also
 allowed.
+hyperlink ta ta ta

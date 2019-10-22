@@ -27,7 +27,7 @@ To start the tutorial do the following:
 * Copy the configuration from README_ to your ``~/.vimrc`` or
   ``~/.config/nvim/init.vim``
 
-* Open the `place_01.rst <place_01.rst>`_ file with Vim
+* Open `place_01.rst <place_01.rst>`_ file in Vim
 
   .. code:: bash
 
@@ -39,12 +39,15 @@ To start the tutorial do the following:
 
     $ nvim place_01.rst
 
-* Follow the instructions from there on in your Vim/Neovim
+* Follow the instructions from there on in your Vim/Neovim session
 
-.. Warning::
+.. Attention::
 
-  The tutorials are writen in reStructured which is a markup langauge.
-  Commands (as well as the outputs of the commands) are enclosed between
-  double quotes. This means that if the tutorial suggests to type
-  ``command`` you should type it in your Vim session without the double
-  quotes.
+  The tutorials are writen in reStructuredText (markup langauge, see
+  `here <http://docutils.sourceforge.net/rst.html>`_), but this
+  shouldn't be a problem to read the text and follow the instructuions.
+  Only thing that might happen is that you pick up on reStructuredText
+  along the way. Commands (as well as the outputs of the commands) are
+  enclosed between double quotes. This means that if the tutorial
+  suggests to type ``command`` you should type it in your Vim session
+  without the double quotes.

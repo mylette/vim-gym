@@ -4,6 +4,13 @@
 Fixing ``gf`` for RST
 =====================
 
+.. note::
+
+  ``:find`` and ``gf`` can open both local and remote URL. This means
+  that you can type ``:find https://neovim.io/`` (with slash in the end)
+  and Vim will open HTML content of Neovim website (see ``:help netrw``
+  if your interested).
+
 If you are familiar with reStructuredText (RST), you might have noticed
 that in the previous example we used plain text as a jump point for our
 ``gf`` command (i.e., ``place_04``). Otherwise, if you don't know
@@ -57,6 +64,6 @@ press ``gf``.
 
   This doesn't work when there is a file called ``place_05.html`` inside
   your working directory. In that case Vim will find ``place_05.html``
-  file, and therefore it will not invoke ``includeexpr`.
+  file, and therefore it will not invoke ``includeexpr``.
 
 .. _README: ../README.rst

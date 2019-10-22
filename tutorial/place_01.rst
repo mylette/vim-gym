@@ -39,7 +39,7 @@ support fuzzy search without plugins. If you are using standard Vim all
 you have to do is include ``set path=**`` and ``set wildmenu`` in your
 ``~/.vimrc``. For Neovim users this functionality should be default,
 however if it is not just include the same configuration to your
-``~/.config/nvim/init.vim`` [2]_. To use the fuzzy search engine type
+``~/.config/nvim/init.vim``. To use the fuzzy search engine type
 ``:find`` and start entering the name of your *target filename* then use
 ``TAB`` to autocomplete the file name. Let's see ``:find`` in action.
 
@@ -51,9 +51,3 @@ sorry for that) and I'll see you there.
        Neo (Keanu Reeves) has to jump rooftops after Morpheus (Laurence
        Fishburne) we would probably be best friends.
 
-.. [2] This configuration does not have the complete functionality of
-       plugins like CommandT_ and ctrlp_, but it provides the
-       fundamentals which is usually sufficiend.
-
-.. _CommandT: https://github.com/wincent/Command-T
-.. _ctrlp: https://github.com/ctrlpvim/ctrlp.vim
