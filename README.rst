@@ -9,34 +9,41 @@ Notes in Vim + Markup Language
 .. contents::
 
 
-Vim is an amazing tool for text manipulation and together with a markup
-language like reStructuredText and Markdown, and some minor
-configuration settings, it becomes highly effective tool for writing
-notes and documentations.
+Vim is renowned as an ultimate tool for text manipulation. Together with
+a markup language like reStructuredText and Markdown and minor
+configuration settings it becomes highly effective tool for writing
+notes and documentations. See `Why You Should Consider Switching to
+Electronic Notebooks`_ if you still haven't.
 
-This project has a double purpose. It provides an example how Vim can be
-used for making notes together with a markup language. In the same time
-it is a tutorial that introduces users to Vim's rich toolbox when it
-comes to dealing with large number of files.
+This project provides an example showing how Vim can be used for making
+notes together with a markup language such as reStructuredText_ and
+Markdown_. In the same time it is a tutorial that introduces users to
+Vim's rich toolbox when it comes to dealing with large number of files
+(see tutorial_ directory).
+
+.. _reStructuredText: http://docutils.sourceforge.net/rst.html
+.. _Markdown: https://daringfireball.net/projects/markdown/
+.. _tutorial: ./tutorial/readme.rst
 
 
 To Plug or Not to Plug
 ======================
 
-There are several plugins that help with note-taking vim-notes_,
-vimwiki_ and riv.vim_, just to name a few. These plugins help users
-navigate, create notes and even generating HTML files. This extra
-functionality in Vim can be helpful (especially for the beginners). The
-main problem, however, with these plugins is that they confine users to
-a set of commands and potentially hinder from expressing creativity in
-Vim. Additionally, they limit users to specific number of markup
-languages, some of which might not be applicable elsewhere.
+There are several plugins that provide support for note-taking in Vim
+vim-notes_, vimwiki_ and riv.vim_, to name a few. These plugins help
+navigate, create notes and generating HTML files which can come in handy
+(especially for the beginners in Vim). The main problem, however, with
+mentioned plugins is that they confine users to a set of commands and
+potentially hinder from expressing creativity in Vim. Additionally, they
+support only certain markup languages, some of which might not be
+applicable elsewhere.
 
 On the other hand, commands for jumping into and create new files have
-always been an integrated part of Vim. Actually, multiple-file
-manipulation is one of the thing where Vim shines the brightest, just
-think about Vim's buffers and argument lists. Also, writing notes in
-bare Vim does not restrict users to a particular markup language.
+always been integrated part of Vim. Actually, **multiple-file
+manipulation is one of the things where Vim shines the brightest**, just
+think about Vim's buffers, argument lists, multiple windows and tabs
+options. Also, writing notes in bare Vim does not restrict to a
+particular markup language.
 
 .. _vim-notes: https://github.com/xolox/vim-notes
 .. _vimwiki: https://github.com/vimwiki/vimwiki
@@ -46,45 +53,45 @@ bare Vim does not restrict users to a particular markup language.
 The Vim Style of Taking Notes
 =============================
 
-The workflow in this project is builds on top of Vim's capability to
-work with multiple files simultaneously. Note-taking requires
-flexibility and that is exactly what Vim delivers.
+This project builds on top of Vim's capability to work with multiple
+files simultaneously. Note-taking requires flexibility and that is
+exactly what Vim delivers.
 
 First of all, when working with multiple files configure your
 environment so that it support so-called fuzzy search by setting ``set
-path+=**`` and ``set wildmenu``. Unfortunately, these commands are not
-appreciated sufficiently, considering that they upgrade Vim from an
+path+=**`` and ``set wildmenu``. These settings, unfortunately, don't
+get the attention they deserve considering that they upgrade Vim from an
 airplane to a spaceship. With this configuration, you want to start
-building a habit of opening your files in Vim from the top-most
-directory of your projects. This allows you to use ``:find`` to easily
-jump into files scattered throughout your project using auto-complete.
-In case you have a list with items that are names of other files (notes)
-simply move the cursor over the name of a file and press ``gf`` to go to
-that file. Not to mention that both of these commands are able to open
-files directly into multiple windows.  If that is not enough try setting
-add ``suffixesadd`` and ``includeexpr`` to open files without typing
-their file extensions, as well as by requesting Vim to manipulate file
-names before opening them. These two amazing features allow you to use
-any kind of markup language you want to write your notes. Would you like
-to create files? Chose which works better for you ``:new`` or ``:e``.
+building a habit of opening files in Vim from the top-most directory of
+projects. This allows using ``:find`` to easily jump into files
+scattered throughout the project with autocomplete (``TAB``). In case
+there is a filename in the text simply move the cursor over the name of
+the file and press ``gf`` to go to that file. Not to mention that both
+``:find`` and ``gf`` are able to open files directly into multiple
+windows. If that is not enough try setting ``suffixesadd`` and
+``includeexpr`` to open files without typing their file extensions, as
+well as by requesting Vim to manipulate file names before opening them.
+These two amazing features allow you to use any kind of markup language
+you want for writing notes. Would you like to create files from Vim?
+Choose which one works better for you ``:new`` or ``:e``.
 
 It's easy to lose track of opened files but rest assured that the Vim
-buffer keeps a list for you, all you need to do is ask ``:ls``.  Editing
+buffer keeps a list for you, all you need to do is ask ``:ls``. Editing
 a file from the buffer is as easy as saying ``:b{pattern}`` where
-``pattern`` is a unique part in the file name, which could be even a
+``{pattern}`` is a unique part in the file name, which could be even a
 single letter! This gets even simpler if you want to go back to a file
-where you were a second ago, simply use ``CTRL-6``!  If you are good at
+where you were a second ago, simply use ``CTRL-6``! If you are good at
 keeping track of the jumps you made don't forget to use ``CRTL-o`` and
 ``CRTL-i``, this will bring you home in a blink of an eye (this one is
-easy to overuse, but don't be Hulk - don't smash).
+easy to overuse, so don't be Hulk - don't smash).
 
 Still not impressed? Here is a real case scenario. You are editing your
 notes from the previous month and you have 20+ files opened in your Vim
-session, you suddenly realize that it would be a great idea to add the
+session. Suddenly you realize that it would be a great idea to add the
 same hyperlink, pointing to a table of content file, at the end of every
 opened files in your buffers. This very simple problem would probably be
-an opening scene to a horror movie in most text editors, but in Vim all you
-have to do is make a small macro called ``r``
+an opening scene for a horror movie in most text editors, but in Vim all
+you have to do is make a small macro called ``r``
 
 .. code:: vim
 
@@ -101,27 +108,29 @@ apply the macro to the buffer list
 
 BAM!
 
-You could also spiral down the rabbit hole and in the worlds of
-splitting windows, multiple tabs and folded contents if you feel like
-it...
+You could also spiral down the rabbit hole and in the worlds of multiple
+windows, multiple tabs and folded contents if you feel like...
 
 All of this and yet we are still scratching the surface of Vim's
-capabilities when it comes to editing multiple files and working with
-notes. I don't want you to get me wrong, using plugins can be great.
-However, certain plugins seem to reinvent some of Vim's irreplaceable
-capabilities and don't seem to fit as well with other Vim's tools for
-anything else than what they are designed for. Although this might not
-be bad per-say, it is probably not optimal for many of us how would.
+capabilities when it comes to editing multiple files, which is what
+writing notes is all about. I don't want you to get me wrong, using
+plugins can be great. However, certain plugins seem to reinvent certain
+of Vim's irreplaceable capabilities and don't seem to fit as well with
+other Vim's tools. Although using the mentioned plugins for writing
+notes might not be bad per-say, it is probably not optimal when
+considering the long run and using The Vim Way |trademark| for
+multi-file processing would be more rewarding.
+
+.. |trademark| unicode:: U+2122 .. TRADEMARK SYMBOL
 
 
 Configuration
 -------------
 
-If you are using Vim make sure that you configure your ``~/.vimrc``,
-however if you are Neovim user you should make changes to in
-``~/config/nvim/init.vim``.
+If you are using Vim make sure to configure your ``~/.vimrc``, however
+if you are using Neovim make changes in ``~/config/nvim/init.vim``.
 
-1. Set the path of your Vim to recursively into the subdirectories with
+1. Set the path in Vim to go recursively into the subdirectories with
 
 .. code:: vim
 
@@ -133,30 +142,34 @@ however if you are Neovim user you should make changes to in
 
   set wildmenu
 
-This configuration is not well-known as much as it probably should be
-since it enables users to do fuzzy search [1]_. In Neovim this should be
-the default, to make sure type ``:set path?`` and ``:set wildmenu?``.
+This configuration is not so well-known and enables fuzzy search [1]_.
+In Neovim this should be the default, make sure by typing ``:set path?``
+and ``:set wildmenu?``.
 
 3. Configure ``suffixesadd`` by adding file extension corresponding to
-   the markup language, e.g., ``set suffixesadd+=.rst,.md``, if your
-   going to use both reStructuredText and Markdown for taking notes.
+   the markup language of your choice. ``set suffixesadd+=.rst,.md``, if
+   your going to use both reStructuredText and Markdown for taking
+   notes.
 
 4. It is useful to set up ``includeexpr`` (see ``:help includeexpr``).
-   When eves Vim doesn't find a file, it invokes ``includeexpr`` and
-   substitutes the searched pattern according to the setting. If your
-   working with reStructuredText(``.rst`` files) add
+   Whenever Vim doesn't find a file it invokes ``includeexpr`` and
+   substitutes the searched pattern according to the settings provided.
+   If plan to work with reStructuredText(``.rst`` files) add
 
 .. code:: vim
 
   set includeexpr=substitute(substitute(substitute(v:fname,'.html','.rst',''),'^_','',''),'_$','','')
 
-otherwise add
+otherwise for Markdown (``.md`` files) add
 
 .. code:: vim
 
   set includeexpr=substitute(v:fname,'.html','.md','')
 
-if your working with Markdown (``.md`` files).
+Use these commands together with ``autocommand`` if you would like to
+have one environment when working with ``.rst`` and other for ``.md``
+files (see, ``:help autocmd``, ``:help BufNewFile`` and ``:help
+BufRead``).
 
 
 Usage
@@ -175,8 +188,8 @@ split the notes into smaller files and make the files reference each
 other. This improves readability of both source files and HTML. To make
 references to files use hyperlinks.
 
-Here are examples with good practices that make the movement between
-files simple.
+Here are examples in reStructuredText with good practices that make
+movement between files simpler
 
 .. code::
 
@@ -189,39 +202,47 @@ and
 
 .. code::
 
-    Still `foo <foo.html>`_ is a hyperlink and a jump point to
-    foo.rst but in athoer form.
+    Also, `foo <foo.html>`_ is a hyperlink and a jump point to foo.rst
+    but with embedded URL.
 
-In case Vim is configured according to Configuration_, place the Vim
+In case Vim is configured according to Configuration_, placing the Vim
 cursor on any of the following in the text ``foo_``, ``_foo``,
-``foo.html``, ``foo.rst`` or ``foo`` and press ``gf`` to jump to
-``foo.rst`` (using ``:find`` with any of the names has the same effect).
+``foo.html``, ``foo.rst`` or ``foo`` and pressing ``gf`` opens
+``foo.rst`` if it exists (using ``:find`` used with any of the names has
+the same effect).
 
 This way of writing hyperlinks introduces jump points that can be used
-for moving around files. Keep in mind that if ``foo.html`` exists on
-Vim's path than ``foo.html`` is not a valid jump point because Vim would
-jump directly to that file. However, if it doesn't exist and Vim has no
-file to find ``includeexpr`` (see Configuration_) activates and makes a
+for moving around files. Keep in mind that if file ``foo.html`` exists
+on Vim's path than ``foo.html`` text is no longer a valid jump point
+because Vim would jump directly to ``foo.html`` file instead of
+``foo.rst``. However, if it doesn't exist than Vim has no file to find
+and ``includeexpr`` activates (see Configuration_). This makes a
 substitution so that instead of ``foo.html`` Vim looks for ``foo.rst``.
+Therefore, HTML files should be outside of the directory where source
+files are located.
 
 
 Tips
 ----
 
-Here are tips that could be applied to more than this project:
+Here are tips that could be applied to multi-file processing in general
+and extend beyond just this project:
 
 * Keep ``:set path+=**`` and ``:set wildmenu`` activated and start Vim
   from the top-most directory of your project. Use ``:find`` together
   with autocompletion (``TAB``) to open files inside the project.
 
 * When opening multiple files in Vim use ``-o`` and ``-O`` flags,
-  respectively, to split the windows horizontally and vertically.
+  respectively, to split the windows horizontally and vertically, or
+  ``-p`` to split into tabs.
+
+* Starting Vim with several files creates an argument list (see ``:help
+  args``).
 
 * When writing text files in Vim use text wrapping ``:set textwidth=72``
-  (adapt line length according to your style, e.g., Docutils uses 70
-  character long lines for their documentation). Use ``gqip`` to wrap a
-  paragraph on which the cursor is located or ``gq`` with visually
-  selected text.
+  (set line length according to your style, e.g., Docutils uses 70
+  character long lines for .rst files). Use ``gqip`` to wrap a paragraph
+  on which the cursor is located or ``gq`` with visually selected text.
 
 
 Why You Should Consider Switching to Electronic Notebooks
@@ -229,12 +250,12 @@ Why You Should Consider Switching to Electronic Notebooks
 
 As a PhD student I came to realized that the amount of paper usage in
 academia is quite high. Partly due to nature of work which revolves
-around reading and writing articles and partly due to the result of
-habits that we develop until we reach graduate studies to have
-notebooks. However, I wouldn't say it is only me since I see many
-researchers reducing the amount of paper consumption.
+around reading and writing articles and partly due to the habits that
+researchers develop until they reach graduate studies where most of
+students use notebooks. However, I see a positive trend where many
+researchers are reducing paper consumption.
 
-To support unnecessary use of paper, I started making e-notes. Although
+To stop the unnecessary use of paper, I started making e-notes. Although
 there are web sites which provide such services (such as Evernote or
 Google Keep) I value my privacy too much to give away personal
 information freely. In the same time using plain text files for making
@@ -244,19 +265,17 @@ PDF would be favorable.
 
 Even though most of people in academia are used to writing LateX,
 writing ``.tex`` files is an overkill as it is tedious and time
-consuming even for advanced users. This is where flexibility and ease of
-markup languages like reStructuredText and Markdown starts to dominate
-the well formulated structure of LaTeX. See `reStrucutredText vs.
-Markdown`_ if you are unsure which markup language is better for you.
+consuming even for the most advanced among users. This is where
+flexibility and ease of markup languages like reStructuredText_ and
+Markdown_ starts to dominate the well-formulated structure of LaTeX. See
+`reStructuredText vs. Markdown`_ if you are unsure which markup
+language is better for you [2]_.
 
-
-.. _`reStructuredText vs. Markdown`: https://eli.thegreenplace.net/2017/restructuredtext-vs-markdown-for-technical-documentation/ 
 
 .. [1] Unfortunatly, this is not so well-known feature. It does not have the complete functionality of plugins such as CommandT_ and ctrlp_, but in my opinion it works great.
 
-..  I could have went for Markdown but I chose reStrucutredText since it has more features and is, in my honest opinion, more appropriate when it comes to technical documentation (see `reStructuredText vs. Markdown`_ article).
+.. [2] I chose reStrucutredText since it has more features and is, in my honest opinion, more appropriate when it comes to writing technical documentation.
 
-.. [3] This is because of ``isfname`` and the list of allowed characters for filenames in Windows.
-
+.. _`reStructuredText vs. Markdown`: https://eli.thegreenplace.net/2017/restructuredtext-vs-markdown-for-technical-documentation/
 .. _CommandT: https://github.com/wincent/Command-T
 .. _ctrlp: https://github.com/ctrlpvim/ctrlp.vim
