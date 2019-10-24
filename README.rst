@@ -5,10 +5,20 @@ Notes in Vim + Markup Language
 :Author: Velibor Zeli
 :Copyright: This tutorial has been placed in the public domain.
 
+
 .. contents::
 
-If you are here that means that you are aware of how amazing Vim is for
-text manipulation and there is no need for me to add more to it.
+
+Vim is an amazing tool for text manipulation and together with a markup
+language like reStructuredText and Markdown, and some minor
+configuration settings, it becomes highly effective tool for writing
+notes and documentations.
+
+This project has a double purpose. It provides an example how Vim can be
+used for making notes together with a markup language. In the same time
+it is a tutorial that introduces users to Vim's rich toolbox when it
+comes to dealing with large number of files.
+
 
 To Plug or Not to Plug
 ======================
@@ -31,6 +41,7 @@ bare Vim does not restrict users to a particular markup language.
 .. _vim-notes: https://github.com/xolox/vim-notes
 .. _vimwiki: https://github.com/vimwiki/vimwiki
 .. _riv.vim: https://github.com/gu-fan/riv.vim
+
 
 The Vim Style of Taking Notes
 =============================
@@ -65,7 +76,7 @@ single letter! This gets even simpler if you want to go back to a file
 where you were a second ago, simply use ``CTRL-6``!  If you are good at
 keeping track of the jumps you made don't forget to use ``CRTL-o`` and
 ``CRTL-i``, this will bring you home in a blink of an eye (this one is
-easy to overuse, don't be Hulk - don't smash).
+easy to overuse, but don't be Hulk - don't smash).
 
 Still not impressed? Here is a real case scenario. You are editing your
 notes from the previous month and you have 20+ files opened in your Vim
@@ -102,6 +113,7 @@ capabilities and don't seem to fit as well with other Vim's tools for
 anything else than what they are designed for. Although this might not
 be bad per-say, it is probably not optimal for many of us how would.
 
+
 Configuration
 -------------
 
@@ -111,62 +123,106 @@ however if you are Neovim user you should make changes to in
 
 1. Set the path of your Vim to recursively into the subdirectories with
 
-  .. code:: vim
+.. code:: vim
 
-    set path+=**
+  set path+=**
 
 2. Enable autocompletion in the command line by
 
-  .. code:: vim
+.. code:: vim
 
-    set wildmenu
+  set wildmenu
 
-In Neovim these are most likely set as default, you could check by
-typing ``:set path?`` and ``:set wildmenu?``. 1. and 2. enable fuzzy
-search [1]_. 
-
-.. [1] Unfortunatly, this is not so well-known feature among user. It
-       does not have the complete functionality of plugins such as
-       CommandT_ and ctrlp_, but in my opinion it works great.
-
-.. _CommandT: https://github.com/wincent/Command-T
-.. _ctrlp: https://github.com/ctrlpvim/ctrlp.vim
+This configuration is not well-known as much as it probably should be
+since it enables users to do fuzzy search [1]_. In Neovim this should be
+the default, to make sure type ``:set path?`` and ``:set wildmenu?``.
 
 3. Configure ``suffixesadd`` by adding file extension corresponding to
    the markup language, e.g., ``set suffixesadd+=.rst,.md``, if your
    going to use both reStructuredText and Markdown for taking notes.
 
-4. The most important configure is ``includeexpr`` (see ``:help
-   includeexpr``). This makes writing notes and jumping smoothly into
-   files possible. If you are using reStructuredText use
+4. It is useful to set up ``includeexpr`` (see ``:help includeexpr``).
+   When eves Vim doesn't find a file, it invokes ``includeexpr`` and
+   substitutes the searched pattern according to the setting. If your
+   working with reStructuredText(``.rst`` files) add
 
-  .. code:: vim
+.. code:: vim
 
-    set includeexpr=substitute(substitute(substitute(v:fname,'.html','.rst',''),'^_','',''),'_$','','')
+  set includeexpr=substitute(substitute(substitute(v:fname,'.html','.rst',''),'^_','',''),'_$','','')
 
-  and for Markdown
+otherwise add
 
-  .. code:: vim
+.. code:: vim
 
-    set includeexpr=substitute(v:fname,'.html','.md','')
+  set includeexpr=substitute(v:fname,'.html','.md','')
 
-  In Windows command ``gf`` might not work in Markdown when used on
-  reference links [2]_
-  
-  .. code:: Markdown
+if your working with Markdown (``.md`` files).
 
-    Example with a [hyperlink][foo] to foo.html file.
 
-    [foo]: foo.html
+Usage
+-----
 
-  although with standard hyperlinks ``[hyperlink](foo.html)`` it should
-  work fine.
+If Vim is in your fingers and you know the basics of either
+reStructuredText or Markdown syntax writing notes should be a walk in
+the park (if needed, brush up your `reStructuredText syntax`_ and
+`Markdown syntax`_ or learn the syntax in 5 minutes).
 
-Examples
---------
+.. _`reStructuredText syntax`: https://docutils.readthedocs.io/en/sphinx-docs/ref/rst/restructuredtext.html#quick-syntax-overview
+.. _`Markdown syntax`: https://www.markdownguide.org/basic-syntax
 
-Tutorial
---------
+Instead of writing one big .rst or .md file with notes, it is better to
+split the notes into smaller files and make the files reference each
+other. This improves readability of both source files and HTML. To make
+references to files use hyperlinks.
+
+Here are examples with good practices that make the movement between
+files simple.
+
+.. code::
+
+    See here, foo_ is a hyperlink and a jump point to foo.rst.
+
+    .. _foo:: foo.html
+
+and
+
+
+.. code::
+
+    Still `foo <foo.html>`_ is a hyperlink and a jump point to
+    foo.rst but in athoer form.
+
+In case Vim is configured according to Configuration_, place the Vim
+cursor on any of the following in the text ``foo_``, ``_foo``,
+``foo.html``, ``foo.rst`` or ``foo`` and press ``gf`` to jump to
+``foo.rst`` (using ``:find`` with any of the names has the same effect).
+
+This way of writing hyperlinks introduces jump points that can be used
+for moving around files. Keep in mind that if ``foo.html`` exists on
+Vim's path than ``foo.html`` is not a valid jump point because Vim would
+jump directly to that file. However, if it doesn't exist and Vim has no
+file to find ``includeexpr`` (see Configuration_) activates and makes a
+substitution so that instead of ``foo.html`` Vim looks for ``foo.rst``.
+
+
+Tips
+----
+
+Here are tips that could be applied to more than this project:
+
+* Keep ``:set path+=**`` and ``:set wildmenu`` activated and start Vim
+  from the top-most directory of your project. Use ``:find`` together
+  with autocompletion (``TAB``) to open files inside the project.
+
+* When opening multiple files in Vim use ``-o`` and ``-O`` flags,
+  respectively, to split the windows horizontally and vertically.
+
+* When writing text files in Vim use text wrapping ``:set textwidth=72``
+  (adapt line length according to your style, e.g., Docutils uses 70
+  character long lines for their documentation). Use ``gqip`` to wrap a
+  paragraph on which the cursor is located or ``gq`` with visually
+  selected text.
+
 
 Why You Should Consider Switching to Electronic Notebooks
 =========================================================
@@ -190,10 +246,17 @@ Even though most of people in academia are used to writing LateX,
 writing ``.tex`` files is an overkill as it is tedious and time
 consuming even for advanced users. This is where flexibility and ease of
 markup languages like reStructuredText and Markdown starts to dominate
-the well formulated structure of LaTeX.
+the well formulated structure of LaTeX. See `reStrucutredText vs.
+Markdown`_ if you are unsure which markup language is better for you.
 
-.. [1] I could have went for Markdown but I chose reStrucutredText since it has more features and is, in my honest opinion, more appropriate when it comes to technical documentation (see `StructuredText vs. Markdown`_ article).
 
-.. [2] This is because of ``isfname`` and the list of allowed characters for filenames in Windows.
+.. _`reStructuredText vs. Markdown`: https://eli.thegreenplace.net/2017/restructuredtext-vs-markdown-for-technical-documentation/ 
 
-.. _`StructuredText vs. Markdown`: https://eli.thegreenplace.net/2017/restructuredtext-vs-markdown-for-technical-documentation/
+.. [1] Unfortunatly, this is not so well-known feature. It does not have the complete functionality of plugins such as CommandT_ and ctrlp_, but in my opinion it works great.
+
+..  I could have went for Markdown but I chose reStrucutredText since it has more features and is, in my honest opinion, more appropriate when it comes to technical documentation (see `reStructuredText vs. Markdown`_ article).
+
+.. [3] This is because of ``isfname`` and the list of allowed characters for filenames in Windows.
+
+.. _CommandT: https://github.com/wincent/Command-T
+.. _ctrlp: https://github.com/ctrlpvim/ctrlp.vim
