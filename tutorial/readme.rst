@@ -19,13 +19,14 @@ Vim more enjoyable.
 
 .. _README: ../README.rst
 
+
 Instructions for Users
 ======================
 
 To start the tutorial do the following:
 
-* Copy the configuration from README_ to your ``~/.vimrc`` or
-  ``~/.config/nvim/init.vim``
+* See `configuration <../README.rst#configuration>` to set your
+  ``~/.vimrc`` or ``~/.config/nvim/init.vim``
 
 * Open `place_01.rst <place_01.rst>`_ file in Vim
 

@@ -9,21 +9,21 @@ subdirectory using abbreviated pattern.
 
 Now it's time to learn about *goto file* command or ``gf``. This is yet
 another useful command that works in a similar way as ``:find``, but
-without all that typing. Basically, instead of typing the pattern to
-``:find`` all you have to do is move the cursor over text which you want
-to use as the pattern and while in the Normal mode press ``gf``, it's
-that simple.
+without all that "annoying" typing. Basically, instead of typing the
+pattern to ``:find`` all you have to do is move the cursor over the text
+that you want to use as the pattern and while in Normal mode press
+``gf``, it's that simple.
 
 Try it out, place your cursor over the marked word --> place_04 <-- and
 jump away by pressing ``gf``. But remember to come back using ``CTRL-o``
 I still want to show you few things before we go further.
 
 Did you notice that until now we worked with only one window in Vim?
-This is not the Vim style of working with multiple files. Therefore, if
-you're used to working with multiple windows you can split the window
-when jumping to a file either by using a version of ``:find`` called
-*splitfind* ``:sfind`` (or ``:sf`` for short). Before you open any
-windows which you maybe don't know how to close, here's a tip, use
+This is not the ideal workflow when working with multiple files.
+Therefore, if you're used to working with multiple windows you can split
+the window when jumping to a file either by using a version of ``:find``
+called *splitfind* ``:sfind`` (or ``:sf`` for short). Before you open
+any windows which you maybe don't know how to close, here's a tip, use
 ``CTRL-w q`` to close the window this will return you to the previous
 one. Feel free to try either
 

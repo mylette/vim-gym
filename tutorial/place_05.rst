@@ -7,7 +7,7 @@ The Buffers
 Press ``CTRL-g`` to see where you are. Let me remind your, your cursor
 way on ``place_05.html`` when you pressed ``gf`` but you actually jumped
 to ``place_05.rst``, and the reason behind it is your configuration for
-``includeexpr``. This is an amazing feature!
+``includeexpr``. This is an amazing feature [1]_!
 
 Now it's time to cover Vim's amazing buffers. When it comes to
 multi-file editing this is where Vim starts to shine. Understanding how
@@ -63,3 +63,5 @@ filename`` or ``CTRL-w n`` to create a ``No name`` file that will get
 it's name when you save the file for the first time using ``:w
 filename``. The two latter commands split the window and creates a new
 file in the same time.
+
+.. [1] See this `link <https://arjanvandergaag.nl/blog/navigating-project-files-with-vim.html>` for some cool use of ``includeexpr``.
