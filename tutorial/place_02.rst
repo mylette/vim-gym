@@ -34,9 +34,9 @@ it is easily configurable. When you set your Vim environment with ``set
 path+=**`` it looks recursively for all the files in the current working
 directory. If the *target filename* is in a subdirectory, you don't need
 to specify the full path to the file, as long as the filename is unique
-searching for the it will be enough for Vim to find it. Try this with
-``foo/place_03.rst`` file, instead of typing the full file path search
-for the file using filename only
+searching for it will be enough for Vim to find it. Try this with
+``foo/place_03.rst`` file, instead of typing the full file path using
+filename only
 
 .. code:: vim
 

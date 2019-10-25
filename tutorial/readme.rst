@@ -25,7 +25,7 @@ Instructions for Users
 
 To start the tutorial do the following:
 
-* See `configuration <../README.rst#configuration>` to set your
+* See `configuration <../README.rst#configuration>`_ to set your
   ``~/.vimrc`` or ``~/.config/nvim/init.vim``
 
 * Open `place_01.rst <place_01.rst>`_ file in Vim

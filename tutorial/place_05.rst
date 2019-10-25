@@ -5,7 +5,7 @@ The Buffers
 ===========
 
 Press ``CTRL-g`` to see where you are. Let me remind your, your cursor
-way on ``place_05.html`` when you pressed ``gf`` but you actually jumped
+was on ``place_05.html`` when you pressed ``gf`` but you actually jumped
 to ``place_05.rst``, and the reason behind it is your configuration for
 ``includeexpr``. This is an amazing feature [1]_!
 
@@ -51,7 +51,7 @@ buffers list.
 
 It is important to learn how to move to a non-existing file, this
 corresponds to creating a file. A simple way to do it is with ``:e
-filename`` which opens a new files for editing in the current window. If
+filename`` which opens a new file for editing in the current window. If
 there are any changes in the file Vim will ask you to save before moving
 to the new file. A better way of making a new files is using ``:new
 filename`` or ``CTRL-w n`` to create a ``No name`` file that will get

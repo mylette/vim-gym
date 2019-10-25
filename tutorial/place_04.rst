@@ -40,8 +40,7 @@ are hyperlinks in reStructuredText and Markdown that point to
 ``foo/place_03.html``. By configuring ``includeexpr`` you can make a
 substitution rule which searches for ``basename.rst`` file instead of
 ``basename.html`` file. In the example shown above Vim searches for
-``foo/place_03.rst`` whenever ``:find`` or ``gf`` are used on
-``foo/place_03.html``.
+``foo/place_03.rst`` whenever ``foo/place_03.html`` is not found.
 
 To continue with the tutorial make sure to configure ``includeexpr``
 according to README_ configuration for .rst files because you are going

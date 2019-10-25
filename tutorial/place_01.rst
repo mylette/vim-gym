@@ -6,13 +6,13 @@ Make the Jump
 .. Attention::
 
   To follow the tutorial open this file in Vim/Neovim from the dierctory
-  where the files is located. This ensures that the ``pwd`` in your Vim
+  where the file is located. This ensures that the ``pwd`` in your Vim
   is set approprietly for multi-file manipulation.
 
-Before you jump anywhere, type ``:pwd`` (without the quotes, sorry for
+Before jumping anywhere, type ``:pwd`` (without the quotes, sorry for
 quotes but they are a part of reStructuredText markup language syntax)
-in the Normal mode to see what is your working directory. The directory
-in which you were when you opened Vim is your current working directory.
+in Normal mode to see what is your working directory. The directory in
+which you were when you opened Vim is your current working directory.
 Optionally, you could change it using ``:cd`` command. It's considered a
 good practice to have your working directory at the top-most level of
 the project on which you are working. In this case using ``:pwd`` should
@@ -27,8 +27,8 @@ increase our productivity.
 
 Let me introduce you to ``:find``, this command is one of your best
 friends when it comes to opening and jumping into files. It works like
-this, while you are in the Normal mode, you would type the command
-together with the *target filename* to which you would like to go to, as
+this, while you are in Normal mode, you would type the command together
+with the *target filename* to which you would like to go to, as
 
 .. code:: vim
 
@@ -45,8 +45,8 @@ however if it is not just include the same configuration to your
 
 Use ``:find`` to jump to a files called ``place_02.rst``. To do this
 simply type ``:find place_02`` (without the quotes, once again sorry for
-that) and press ``TAB``. Vim shown expand this to ``:find place_02.rst``
-press enter and I'll see you there.
+that) and press ``TAB``. Vim should expand this to ``:find
+place_02.rst`` and I'll see you there.
 
 .. [1] If this reminds you of the scene from "The Matrix" movie where
        Neo (Keanu Reeves) has to jump rooftops after Morpheus (Laurence
