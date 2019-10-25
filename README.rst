@@ -255,7 +255,7 @@ and extend beyond just this project:
 Why You Should Consider Switching to Electronic Notebooks
 =========================================================
 
-As a PhD student I came to realized that the amount of paper usage in
+As a PhD student I came to realize that the amount of paper usage in
 academia is quite high. Partly due to nature of work which revolves
 around reading and writing articles and partly due to the habits that
 researchers develop until they reach graduate studies where most of
