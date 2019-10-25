@@ -1,7 +1,7 @@
 .. -*- coding: utf-8 -*-
 
 =========================
-Find a Place to Jump from
+Find a Place to Jump From
 =========================
 
 Great work! You have successfully jumped into a file located in a
@@ -47,6 +47,6 @@ movement between multiple files.
 I bet you love ``gf`` by now, since it don't require much typing, so
 here is a jump point for you: ``place_04``. Notice that the jump point
 does not have the file path and extension, this is because ``gf`` will
-expand the pattern under the cursor together with ``set path+=**`` and
-``set suffixesadd+=.rst`` configuration into ``place_04.rst``. Place the
-cursor on ``place_04`` and use ``gf`` to jump to the next topic.
+expand the pattern under the cursor together with ``:set path+=**`` and
+``:set suffixesadd+=.rst`` configuration into ``place_04.rst``. Place
+the cursor on ``place_04`` and use ``gf`` to jump to the next topic.

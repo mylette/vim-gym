@@ -1,6 +1,6 @@
-==============================
-Notes in Vim + Markup Language
-==============================
+=====================
+Taking Notes With Vim
+=====================
 
 :Author: Velibor Zeli
 :Copyright: This tutorial has been placed in the public domain.
@@ -50,8 +50,8 @@ particular markup language.
 .. _riv.vim: https://github.com/gu-fan/riv.vim
 
 
-The Vim Style of Taking Notes
-=============================
+The Vim Way |trademark| of Taking Notes
+=======================================
 
 This project builds on top of Vim's capability to work with multiple
 files simultaneously. Note-taking requires flexibility and that is
@@ -147,9 +147,13 @@ In Neovim this should be the default, make sure by typing ``:set path?``
 and ``:set wildmenu?``.
 
 3. Configure ``suffixesadd`` by adding file extension corresponding to
-   the markup language of your choice. ``set suffixesadd+=.rst,.md``, if
-   your going to use both reStructuredText and Markdown for taking
-   notes.
+   the markup language of your choice. If you are planning to use both
+   reStructuredText and Markdown for taking notes you can add both
+   extensions in form of comma separated list
+
+.. code:: vim
+
+  set suffixesadd+=.rst,.md
 
 4. It is useful to set up ``includeexpr`` (see ``:help includeexpr``).
    Whenever Vim doesn't find a file it invokes ``includeexpr`` and
