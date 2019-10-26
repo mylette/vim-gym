@@ -117,7 +117,7 @@ writing notes is all about. I don't want you to get me wrong, using
 plugins can be great. However, certain plugins seem to reinvent some of
 Vim's irreplaceable capabilities and don't seem to fit as well with
 other Vim tools. Although using the mentioned plugins for writing notes
-might not be bad per-say, it is probably not optimal when considering
+might not be bad per se, it is probably not optimal when considering
 the long run where as using The Vim Way |trademark| for multi-file
 processing would be more rewarding.
 
