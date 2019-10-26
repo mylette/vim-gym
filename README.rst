@@ -279,9 +279,9 @@ start to dominate over the well-formulated structure of LaTeX. See
 is better for you [2]_.
 
 
-.. [1] Unfortunatly, this is not so well-known feature. It does not have the complete functionality of plugins such as CommandT_ and ctrlp_, but in my opinion it works great.
+.. [1] Unfortunately, this is not so well-known feature. It does not have the complete functionality of plugins such as CommandT_ and ctrlp_, but in my opinion it works great.
 
-.. [2] Personally, I chose reStrucutredText since it has more features and is, in my honest opinion, more appropriate when it comes to writing technical documentation.
+.. [2] Personally, I chose reStructuredText since it has more features and is, in my honest opinion, more appropriate when it comes to writing technical documentation.
 
 .. _`reStructuredText vs. Markdown`: https://eli.thegreenplace.net/2017/restructuredtext-vs-markdown-for-technical-documentation/
 .. _CommandT: https://github.com/wincent/Command-T

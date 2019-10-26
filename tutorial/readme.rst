@@ -44,9 +44,9 @@ To start the tutorial do the following:
 
 .. Attention::
 
-  The tutorials are writen in reStructuredText (markup langauge, see
+  The tutorials are written in reStructuredText (markup language, see
   `here <http://docutils.sourceforge.net/rst.html>`_), but this
-  shouldn't be a problem to read the text and follow the instructuions.
+  shouldn't be a problem to read the text and follow the instructions.
   Only thing that might happen is that you pick up on reStructuredText
   along the way. Commands (as well as the outputs of the commands) are
   enclosed between double quotes. This means that if the tutorial

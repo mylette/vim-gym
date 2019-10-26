@@ -32,7 +32,7 @@ one. Feel free to try either
   :sf place_04.rst
 
 to jump to the file while splitting the window horizontally (close the
-window by pressing ``CRTL-w q`` and come back) or
+window by pressing ``CTRL-w q`` and come back) or
 
 .. code:: vim
 

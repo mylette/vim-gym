@@ -5,9 +5,9 @@ Make the Jump
 
 .. Attention::
 
-  To follow the tutorial open this file in Vim/Neovim from the dierctory
+  To follow the tutorial open this file in Vim/Neovim from the directory
   where the file is located. This ensures that the ``pwd`` in your Vim
-  is set approprietly for multi-file manipulation.
+  is set appropriately for multi-file manipulation.
 
 Before jumping anywhere, type ``:pwd`` (without the quotes, sorry for
 quotes but they are a part of reStructuredText markup language syntax)
