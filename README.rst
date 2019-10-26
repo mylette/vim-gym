@@ -81,8 +81,8 @@ a file from the buffer is as easy as saying ``:b{pattern}`` where
 ``{pattern}`` is a unique part in the file name, which could be even a
 single letter! This gets even simpler if you want to go back to a file
 where you were a second ago, simply use ``CTRL-6``! If you are good at
-keeping track of the jumps you made don't forget to use ``CRTL-o`` and
-``CRTL-i``, this will bring you home in a blink of an eye (this one is
+keeping track of the jumps you made don't forget to use ``CTRL-o`` and
+``CTRL-i``, this will bring you home in a blink of an eye (this one is
 easy to overuse, so don't be Hulk - don't smash).
 
 Still not impressed? Here is a real case scenario. You are editing your
