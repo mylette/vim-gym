@@ -17,10 +17,10 @@ you can move back and forth between your old jumps easily using
 typing ``:find place_01.rst`` to go back, you can do the same with
 ``CTRL-o`` and go back to the exact location from which you jumped into
 this file. Try it out, press ``CTRL-o`` but don't forget to press
-``CRTL-i`` to come back.
+``CTRL-i`` to come back.
 
 As you can imagine, this is very helpful when you want to move between
-files. Instead of typing ``:find`` you can use ``CTRL-o`` and ``CRTL-i``
+files. Instead of typing ``:find`` you can use ``CTRL-o`` and ``CTRL-i``
 to jump back and forth. However, keep in mind, *by default Vim doesn't
 let you jump to another file if there are unsaved changes* which is a
 good decision. Later you will see a more elegant way of jumping to the
