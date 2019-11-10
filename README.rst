@@ -81,35 +81,11 @@ a file from the buffer is as easy as saying ``:b{pattern}`` where
 ``{pattern}`` is a unique part in the file name, which could be even a
 single letter! This gets even simpler if you want to go back to a file
 where you were a second ago, simply use ``CTRL-6``! If you are good at
-keeping track of the jumps you made don't forget to use ``CTRL-o`` and
-``CTRL-i``, this will bring you home in a blink of an eye (this one is
-easy to overuse, so don't be Hulk - don't smash).
-
-Still not impressed? Here is a real case scenario. You are editing your
-notes from the previous month and you have 20+ files opened in your Vim
-buffers. Suddenly you realize that it would be a great idea to add the
-same hyperlink, pointing to a table of content file, at the end of every
-opened files in your buffers. This very simple problem would probably be
-an opening scene for a horror movie in most text editors, but in Vim all
-you have to do is make a small macro called ``r``
-
-.. code:: vim
-
-  qrGohyperlink pew pewCTRL-[q
-
-(``q`` - opens and saves the macro, ``r`` - is the register name, ``G``
-\- go to the end of the file, ``o`` - drop into a new line,
-everything in between is hyperlink content and ESC sequence). Now just
-apply the macro to the buffer list
-
-.. code:: vim
-
-  :bufdo! normal @r
-
-BAM!
-
-You could also spiral down the rabbit hole and into the worlds of
-multiple windows, multiple tabs and folded contents if you feel like...
+keeping track of the jumps you made don't forget to use ``CRTL-o`` and
+``CRTL-i``, this will bring you home in a blink of an eye (this one is
+easy to overuse, so don't be Hulk - don't smash). At this point, it is
+easy to spiral down the rabbit hole and into the world of multiple
+windows, multiple tabs and folded contents if you feel like...
 
 All of this and yet we are still scratching the surface of Vim's
 capabilities when it comes to editing multiple files, which is what
@@ -251,6 +227,9 @@ and extend beyond just this project:
   compile .rst or .md files into .html with pandoc without leaving Vim
   session).
 
+* Use ``bufdo`` to execute a command on every file in the buffer list
+  (see ``:help bufdo``), e.g., ``:bufdo! normal @r`` applies a macro
+  saved in register ``r`` to every file in the buffer list.
 
 Why You Should Consider Switching to Electronic Notebooks
 =========================================================
