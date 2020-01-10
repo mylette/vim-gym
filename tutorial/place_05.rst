@@ -53,10 +53,15 @@ It is important to learn how to move to a non-existing file, this
 corresponds to creating a file. A simple way to do it is with ``:e
 filename`` which opens a new file for editing in the current window. If
 there are any changes in the file Vim will ask you to save before moving
-to the new file. A better way of making a new files is using ``:new
-filename`` or ``CTRL-w n`` to create a ``No name`` file that will get
-it's name when you save the file for the first time using ``:w
-filename``. The two latter commands split the window and creates a new
-file in the same time.
+to the new file. A better way of making a new files is using ``:new`` or
+``CTRL-w n`` to create a ``No name`` file that will get it's name when
+you save the file for the first time using ``:w filename`` (otherwise
+use ``:new filename`` to open a file called *filename*). The two latter
+commands split the current window and create a new file in the same
+time.
+
+Lastly, if you would like to rename your file from inside Vim use
+``:saveas filename``, this changes the name of the buffer inside the Vim
+session and the name of the file to *filename*.
 
 .. [1] See this `link <https://arjanvandergaag.nl/blog/navigating-project-files-with-vim.html>`_ for some cool use of ``includeexpr``.

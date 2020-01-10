@@ -72,8 +72,8 @@ windows. If that is not enough try setting ``suffixesadd`` and
 ``includeexpr`` to open files without typing their file extensions, as
 well as by requesting Vim to manipulate file names before opening them.
 These two amazing features allow you to use any kind of markup language
-you want for writing notes. Would you like to create files while in Vim?
-Choose which one works better for you ``:new`` or ``:e``.
+you want for writing notes. Would you like to create files while inside
+Vim?  Choose which one works better for you ``:new`` or ``:e``.
 
 It's easy to lose track of opened files but rest assured that the Vim
 buffer keeps a list for you, all you need to do is ask ``:ls``. Editing
